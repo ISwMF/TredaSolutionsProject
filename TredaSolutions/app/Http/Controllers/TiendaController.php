@@ -50,4 +50,9 @@ class TiendaController extends Controller
         $tienda = Tienda::find($id);
         return $tienda->obtenerProductos;
     }
+
+    public function testing(){
+        echo "hola";
+    }
+
 }
