@@ -11,6 +11,7 @@ class CreateProductosTable extends Migration
      *
      * @return void
      */
+    public $timestamps = false;
     public function up()
     {
         Schema::create('productos', function (Blueprint $table) {

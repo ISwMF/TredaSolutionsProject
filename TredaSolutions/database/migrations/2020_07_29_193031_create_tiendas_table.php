@@ -11,6 +11,7 @@ class CreateTiendasTable extends Migration
      *
      * @return void
      */
+    public $timestamps = false;
     public function up()
     {
         Schema::create('tiendas', function (Blueprint $table) {

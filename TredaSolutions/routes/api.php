@@ -21,3 +21,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('tienda/{id}', 'TiendaController@show');
 Route::get('tienda-productos/{id}', 'TiendaController@mostrarProductos');
+Route::post('tienda', 'TiendaController@store');
+Route::post('producto', 'ProductoController@store');
