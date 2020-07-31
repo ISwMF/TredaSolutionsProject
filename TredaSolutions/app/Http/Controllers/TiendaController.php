@@ -51,8 +51,16 @@ class TiendaController extends Controller
         return $tienda->obtenerProductos;
     }
 
-    public function testing(){
-        echo "hola";
+    public function mostrarProductosEnVista($id)
+    {
+        session_start();
+        $idAux = $_SESSION["id_actual"];
+        if ($idAux != null && $idAux == $id) {
+            $tienda = Tienda::find($id);
+            $prod = $tienda->obtenerProductos;
+            return view('productos-tiendas', ['productos' => $prod, 'tienda' => $tienda]);
+        } else {
+            return redirect('home');
+        }
     }
-
 }

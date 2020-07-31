@@ -1,5 +1,4 @@
 (function ($) {
-    alert('something');
     'use strict';
 
     var form = $('.contact__form'),
@@ -19,8 +18,9 @@
 
     // fail function
     function fail_func(data) {
+        
         message.fadeIn()
-        message.html(data.responseText);
+        message.html(data);
         setTimeout(function () {
             message.fadeOut(5000);
         }, 5000);
@@ -40,7 +40,7 @@
         }
         $.ajax({
             type: 'GET',
-            url: 'aleluya/' + id,
+            url: 'http://localhost:8000/api/tienda/' + id,
             data: form_data
         })
             .done(done_func)

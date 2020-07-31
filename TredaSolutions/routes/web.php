@@ -22,7 +22,12 @@ Route::get('/home', function(){
     return view('login');
 });
 
-Route::get('/php/tienda/{id}', function(Request $request){
-    dd($request);
-    return view('welcome');
+Route::get('php/tienda/{id}', 'TiendaController@mostrarProductosEnVista');
+
+Route::get('/agregar-tienda', function(){
+    return view('agregartienda');
+});
+
+Route::get('/agregar-producto', function(){
+    return view('agregarproducto');
 });
