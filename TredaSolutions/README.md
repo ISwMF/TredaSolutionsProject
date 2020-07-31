@@ -81,15 +81,23 @@ Programas requeridos para el funcionamiento adecuado del sistema:
 4. Crear una base de datos para el proyecto:
     Deberás iniciar los servicios de base de datos MySQL y Apache haciendo uso de XAMPP. Una vez iniciados deberás ir al enlace http://localhost/phpmyadmin donde se mostrarán las bases de datos que posees y una vez allí crearás una con el nombre que quieras, en mi caso la nombré "tredasolutions" sin comillas.
 5. Editar el archivo .env.example y otros archivos:
-    Volviendo al proyecto, dentro de el encontrarás un archivo llamado .env.example, modifica su nombre para que solo quede .env, recomiendo hacer una copia de este archivo llamada .env.example
+    Volviendo al proyecto, dentro de el encontrarás un archivo llamado .env.example, modifica su nombre para que solo quede .env, recomiendo hacer una copia de este archivo llamada .env.example.
+    
     Abre el archivo .env con un editor de texto y allí encontrarás diferentes variables del sistema de las cuales nos enfocaremos en tres, DB_DATABASE, DB_USERNAME, DB_PASSWORD.
-    En la primera coloca el nombre de la base de datos que se le dio en el cuarto punto de esta guía.
-    En la segunda y tercera coloca las credenciales para acceder a phpmyadmin, que si no las has modificado serán "root" y "" que son las credenciales por defecto.
-    De esta manera estas tres lineas serían:
-        DB_DATABASE=tredasolutionsaux
-        DB_USERNAME=root
-        DB_PASSWORD=
-    Luego hay que modificar el archivo database.php ubicado en TredaSolutions/config/database.php, allí se encontrarán varios tipos de conexiones. Ubica la que estes usando (en mi caso MySQL) y modifica los campos 'database', 'username' y 'password'.
+   
+   En la primera coloca el nombre de la base de datos que se le dio en el cuarto punto de esta guía.
+   
+   En la segunda y tercera coloca las credenciales para acceder a phpmyadmin, que si no las has modificado serán "root" y "" que son las credenciales por defecto.
+   
+   De esta manera estas tres lineas serían:
+   
+   DB_DATABASE=tredasolutionsaux
+   
+   DB_USERNAME=root
+   
+   DB_PASSWORD=
+   
+   Luego hay que modificar el archivo database.php ubicado en TredaSolutions/config/database.php, allí se encontrarán varios tipos de conexiones. Ubica la que estes usando (en mi caso MySQL) y modifica los campos 'database', 'username' y 'password'.
 
 6. Escribe los siguientes comandos en el entorno de comandos para configurar el proyecto:
     - php artisan key:generate
