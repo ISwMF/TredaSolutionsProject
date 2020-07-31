@@ -74,7 +74,7 @@ Programas requeridos para el funcionamiento adecuado del sistema:
 **Pasos para ejecutarlo**
 
 1. Descargar o clonar el proyecto en tu computadora:
-    Puedes hacer uso de herramientas de git tal como Git Bash para clonar el proyecto o descargarlo como ZIP desde principal de este [proyecto](https://github.com/ISwMF/TredaSolutionsProject)
+    Puedes hacer uso de herramientas de git tal como Git Bash para clonar el proyecto o descargarlo como ZIP desde principal de este [proyecto](https://github.com/ISwMF/TredaSolutionsProject/tree/frontend)
 2. Ir a la ruta del proyecto de tu computador:
     Usando el ambiente de comandos de tu sistema operativo (como CMD en Windows o el shell en Linux) deberás ubicarte en la ruta donde esté el proyecto.
 3. Instalar composer en el proyecto:
