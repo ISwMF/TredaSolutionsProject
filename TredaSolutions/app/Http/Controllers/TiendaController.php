@@ -23,7 +23,8 @@ class TiendaController extends Controller
     public function store(Request $request)
     {
         event(new NuevaPeticion("Crear nueva tienda."));
-        return Tienda::create($request->all());
+        Tienda::create($request->all());
+        return response()->json(['respuesta' => 'hecho']);
     }
 
     public function update(Request $request, $id)
@@ -62,5 +63,10 @@ class TiendaController extends Controller
         } else {
             return redirect('home');
         }
+    }
+
+    public function mostrarTiendas(){
+        $tiendas = Tienda::all();
+        return view('agregarproducto', ['tiendas' => $tiendas]);
     }
 }

@@ -26,7 +26,7 @@ class ResgistrarPeticion
     public function handle(NuevaPeticion $event)
     {
         if (isset($event->texto)) {
-            $myfile = fopen("../storage/logs/entradas.log", "w") or die("Unable to open file!");
+            $myfile = fopen("../storage/logs/entradas.log", "a+") or die("Unable to open file!");
             $txt = $event->texto . "\n";
             fwrite($myfile, "[" . date("r") . "] Petición realizada: " . $txt);
             fclose($myfile);

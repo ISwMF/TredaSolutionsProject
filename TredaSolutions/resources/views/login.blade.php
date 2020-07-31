@@ -30,16 +30,6 @@
 						<div class="card-body">
 							<form class="contact__form" method="post" action="../php/mail.php">
 
-								<!-- form message -->
-								<div class="row">
-									<div class="col-12">
-										<div class="contact__msg" style="display: none">
-											<p>Your message was sent successfully.</p>
-										</div>
-									</div>
-								</div>
-								<!-- end message -->
-
 								<!-- form element -->
 								<div class="row">
 									<div class="col-md-12 form-group">

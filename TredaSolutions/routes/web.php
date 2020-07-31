@@ -28,6 +28,7 @@ Route::get('/agregar-tienda', function(){
     return view('agregartienda');
 });
 
-Route::get('/agregar-producto', function(){
-    return view('agregarproducto');
-});
+Route::get('/agregar-producto', 'TiendaController@mostrarTiendas');
+
+Route::post('agregarproducto', 'ProductoController@store');
+Route::post('agregartienda', 'TiendaController@store');

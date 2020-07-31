@@ -25,7 +25,7 @@ class ProductoController extends Controller
         $patronvalor = "/^[0-9]*$/i";
         $patronfecha = "/^(0[1-9]|[1-2][0-9]|3[0-1])-(0[1-9]|1[0-2])-[0-9]{4}$/i";
 
-        if((preg_match_all($patronvalor, $request->valor) != 0 ) && (preg_match($patronfecha, $request->fecha))){
+        if ((preg_match_all($patronvalor, $request->valor) != 0) && (preg_match($patronfecha, $request->fecha))) {
             event(new NuevaPeticion("Guardar un producto."));
             $producto = new Producto;
             $producto->nombre = $request->nombre;
@@ -34,11 +34,10 @@ class ProductoController extends Controller
             $producto->tienda_id = $request->tienda_id;
             $producto->imagen = base64_encode($request->imagen);
             $producto->save();
-            return "Hecho";
-        }else{
-            return "Uno o varios de los valores es incorrecto";
+            return response()->json(['respuesta' => 'hecho']);
+        } else {
+            return response()->json(['respuesta' => 'uno o varios de los valores es incorrecto']);
         }
-        
     }
 
     public function update(Request $request, $id)
@@ -46,7 +45,6 @@ class ProductoController extends Controller
         event(new NuevaPeticion("Actualizar un producto."));
         $producto = Producto::findOrFail($id);
         $producto->update($request->all());
-
         return $producto;
     }
 
@@ -58,4 +56,6 @@ class ProductoController extends Controller
 
         return 204;
     }
+
+    
 }
