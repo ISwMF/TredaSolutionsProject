@@ -59,3 +59,49 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+
+
+
+
+## Instalación
+
+Programas requeridos para el funcionamiento adecuado del sistema:
+- **XAMPP**: Servidor local que contiene PHP en su versión 7.4.8 y MariaDB como base de datos. Se puede descargar a través del siguiente enlace [XAMPP](https://www.apachefriends.org/es/download.html)
+- **Composer**: Gestor de dependencias para PHP. Se puede descargar a través del siguiente enlace [Composer](https://getcomposer.org/download/)
+
+**Pasos para ejecutarlo**
+
+1. Descargar o clonar el proyecto en tu computadora:
+    Puedes hacer uso de herramientas de git tal como Git Bash para clonar el proyecto o descargarlo como ZIP desde principal de este [proyecto](https://github.com/ISwMF/TredaSolutionsProject)
+2. Ir a la ruta del proyecto de tu computador:
+    Usando el ambiente de comandos de tu sistema operativo (como CMD en Windows o el shell en Linux) deberás ubicarte en la ruta donde esté el proyecto.
+3. Instalar composer en el proyecto:
+    Cuando ya estes en la ruta del proyecto, escribe el comando "composer install" sin comillas y tras presionar enter, deberás esperar a que se installe Composer.
+4. Crear una base de datos para el proyecto:
+    Deberás iniciar los servicios de base de datos MySQL y Apache haciendo uso de XAMPP. Una vez iniciados deberás ir al enlace http://localhost/phpmyadmin donde se mostrarán las bases de datos que posees y una vez allí crearás una con el nombre que quieras, en mi caso la nombré "tredasolutions" sin comillas.
+5. Editar el archivo .env.example y otros archivos:
+    Volviendo al proyecto, dentro de el encontrarás un archivo llamado .env.example, modifica su nombre para que solo quede .env, recomiendo hacer una copia de este archivo llamada .env.example.
+    
+    Abre el archivo .env con un editor de texto y allí encontrarás diferentes variables del sistema de las cuales nos enfocaremos en tres, DB_DATABASE, DB_USERNAME, DB_PASSWORD.
+   
+   En la primera coloca el nombre de la base de datos que se le dio en el cuarto punto de esta guía.
+   
+   En la segunda y tercera coloca las credenciales para acceder a phpmyadmin, que si no las has modificado serán "root" y "" que son las credenciales por defecto.
+   
+   De esta manera estas tres lineas serían:
+   
+   DB_DATABASE=tredasolutionsaux
+   
+   DB_USERNAME=root
+   
+   DB_PASSWORD=
+   
+   Luego hay que modificar el archivo database.php ubicado en TredaSolutions/config/database.php, allí se encontrarán varios tipos de conexiones. Ubica la que estes usando (en mi caso MySQL) y modifica los campos 'database', 'username' y 'password'.
+
+6. Escribe los siguientes comandos en el entorno de comandos para configurar el proyecto:
+    - php artisan key:generate
+    - php artisan migrate
+
+7. Inicia el proyecto con el comando "php artisan serve" sin comillas y verifica que todas sus funcionalidades
