@@ -50,7 +50,7 @@
                         <td>{{$productos[$i]['nombre']}}</td>
                         <td>{{$productos[$i]['descripcion']}}</td>
                         <td>{{$productos[$i]['valor']}}</td>
-                        <td><img src="{{base64_decode($productos[$i]['imagen'])}}"></td>
+                        <td><img src="{{base64_decode($productos[$i]['imagen'])}}" width="100" height="100"></td>
                         <td>{{$productos[$i]['created_at']}}</td>
                         </tr>
                         @endfor
