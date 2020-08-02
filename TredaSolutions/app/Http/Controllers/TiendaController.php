@@ -57,6 +57,7 @@ class TiendaController extends Controller
         session_start();
         $idAux = $_SESSION["id_actual"];
         if ($idAux != null && $idAux == $id) {
+            event(new NuevaPeticion("Mostrar productos de una tienda (vista)"));
             $tienda = [];
             $tienda = Tienda::find($id);
             if (empty($tienda)) {
