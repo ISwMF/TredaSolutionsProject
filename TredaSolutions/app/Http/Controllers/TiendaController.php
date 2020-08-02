@@ -57,9 +57,14 @@ class TiendaController extends Controller
         session_start();
         $idAux = $_SESSION["id_actual"];
         if ($idAux != null && $idAux == $id) {
+            $tienda = [];
             $tienda = Tienda::find($id);
-            $prod = $tienda->obtenerProductos;
-            return view('productos-tiendas', ['productos' => $prod, 'tienda' => $tienda]);
+            if (empty($tienda)) {
+                return view('tienda-no-encontrada');
+            }else{
+                $prod = $tienda->obtenerProductos;
+                return view('productos-tiendas', ['productos' => $prod, 'tienda' => $tienda]);
+            }
         } else {
             return redirect('home');
         }
