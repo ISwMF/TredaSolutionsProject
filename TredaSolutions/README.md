@@ -105,6 +105,6 @@ Programas requeridos para el funcionamiento adecuado del sistema:
     - php artisan migrate
 
 7. Rellenar la base de datos: 
-    En este enlace encontrarás un archivo SQL en Google Drive el cual deberás descargar e importar en la base de datos [Arhivo SQL](https://drive.google.com/file/d/1wdZrY0mLnN75nhpkTIChVQ-9O2SGUpTG/view?usp=sharing)
+    En este enlace encontrarás un archivo SQL en Google Drive el cual deberás descargar e importar en la base de datos [Arhivo SQL](https://drive.google.com/file/d/12GLPwMf5Cr2H_3biFjbZ7iGZdjMwOevV/view?usp=sharing)
 
 8. Inicia el proyecto con el comando "php artisan serve" sin comillas y verifica todas sus funcionalidades a través de la página http://localhost:8000/home
