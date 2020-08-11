@@ -18,8 +18,8 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
-        NuevaPeticion::class =>[
-            ResgistrarPeticion::class,
+        'App\Events\NuevaPeticion' =>[
+            'App\Listeners\ResgistrarPeticion'
         ],
 
     ];

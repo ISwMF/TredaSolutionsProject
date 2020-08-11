@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
+Route::get('/home', function(){
+    return view('login');
+});
+Route::get('tienda/{id}', 'TiendaController@mostrarProductosEnVista');
+Route::get('/agregar-tienda', function(){
+    return view('agregartienda');
+});
+Route::get('/agregar-producto', 'TiendaController@mostrarTiendas');
+
+Route::post('agregarproducto', 'ProductoController@store');
+Route::post('agregartienda', 'TiendaController@store');
+Route::post('/', 'TiendaController@test');
+Route::post('/home', 'TiendaController@test');
